@@ -1,5 +1,5 @@
 import './App.css'
-import ListOfUsers from './components/listOfUsers'
+import ListOfUsers from './users/components/listOfUsers'
 
 function App() {
   return <ListOfUsers/>;
