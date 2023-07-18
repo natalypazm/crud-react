@@ -12,7 +12,7 @@ export interface userWithId extends User {
     id: userId
 }
 
-const initialState:userWithId[] = [
+const DEFAULT_STATE:userWithId[] = [
     {
       "id": 1,
       "name": "Nataly Paz",
@@ -73,7 +73,12 @@ const initialState:userWithId[] = [
       "github": "isabelvargas",
       "email": "isabel@example.com"
     }
-  ];
+];
+
+const initialState: userWithId[] = (() => {
+  const persistedState = localStorage.getItem('redux_state');
+  return persistedState ? JSON.parse(persistedState).users : DEFAULT_STATE;
+})();
 
 export const usersSlice = createSlice({
     name: 'users',
