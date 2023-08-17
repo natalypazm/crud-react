@@ -13,9 +13,9 @@ import {
 import { useAppSelector } from "../hooks/store"
 import { useUserActions } from "../hooks/useUserActions"
 
-export default function listOfUsers(){
+export function ListOfUsers(){
 
-    const data = useAppSelector((state) => state.users)
+    const data = useAppSelector((state) => state.users);
     const { removeUser } = useUserActions();
     
     return (

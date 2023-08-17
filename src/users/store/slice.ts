@@ -87,9 +87,14 @@ export const usersSlice = createSlice({
       deleteUserById: (state, action: PayloadAction<userId>) => {
         const id = action.payload;
         return state.filter((user) => user.id !== id);
+      },
+      addUser: (state, action:PayloadAction<User>) => {
+        const id = window.crypto.getRandomValues(new Uint8Array(1))[0];
+        // const id = crypto.randomUUID();
+        return [...state, {id, ...action.payload}]
       }
     }
 })
 
 export default usersSlice.reducer
-export const { deleteUserById } = usersSlice.actions
+export const { deleteUserById, addUser } = usersSlice.actions
