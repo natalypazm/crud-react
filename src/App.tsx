@@ -8,7 +8,7 @@ function App() {
     <>
     <CreateNewUser/>
     <ListOfUsers/>
-    <Toaster richColors/>
+    <Toaster position="top-right" richColors/>
     </>
   )
 }
